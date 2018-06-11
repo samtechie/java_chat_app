@@ -131,7 +131,6 @@ class UserHandler implements Runnable {
                 }
 
             }else if (message.charAt(0) == '#'){
-                user.changeColor(message);
                 // update color for all other users
                 this.server.broadcastAllUsers();
             }else{
@@ -154,7 +153,6 @@ class UserHandler implements Runnable {
          private InputStream streamIn;
          private String nickname;
          private Socket client;
-         private String color;
 
          // constructor
          public User(Socket client, String name) throws IOException {
@@ -163,7 +161,6 @@ class UserHandler implements Runnable {
              this.client = client;
              this.nickname = name;
              this.userId = nbUser;
-             this.color = ColorInt.getColor(this.userId);
              nbUser += 1;
          }
 
