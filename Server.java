@@ -151,7 +151,7 @@ class UserHandler implements Runnable {
          private int userId;
          private PrintStream streamOut;
          private InputStream streamIn;
-         private String nickname;
+         private String username;
          private Socket client;
 
          // constructor
@@ -159,7 +159,7 @@ class UserHandler implements Runnable {
              this.streamOut = new PrintStream(client.getOutputStream());
              this.streamIn = client.getInputStream();
              this.client = client;
-             this.nickname = name;
+             this.username = name;
              this.userId = nbUser;
              nbUser += 1;
          }
@@ -173,8 +173,8 @@ class UserHandler implements Runnable {
              return this.streamIn;
          }
 
-         public String getNickname(){
-             return this.nickname;
+         public String getUsername(){
+             return this.username;
          }
 
 
